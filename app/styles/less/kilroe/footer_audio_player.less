@@ -1,0 +1,58 @@
+footer {
+    width: 100%;
+    height: 30px;
+    background: #000;
+    margin: 0;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.audio-player-controls {
+    width: 95%;
+    margin: 6px auto 0;
+    color: @link-hover-gray;
+    text-align: left;
+
+    @media @desktop-wide {
+        width: 75%;
+    }
+
+    .audio-player-icon {
+        cursor: pointer;
+        padding-right: 10px;
+        transition: @link-hover-animation;
+    }
+
+    .audio-player-icon:hover {
+        color: @main-text-color;
+    }
+
+    .audio-player-text {
+        padding-right: 10px;
+    }
+}
+
+.play, .pause, .mic-off {
+    display: none;
+}
+
+.seekBase {
+  height: 4px;
+  width: 75%;
+  border: 1px solid @link-hover-gray;
+  margin-top: 9px;
+
+  @media @tablet {
+      width: 100%;
+  }
+}
+
+.seekLoad {
+    height: 2px;
+    width: 0;
+    background-color: @main-text-color;
+}

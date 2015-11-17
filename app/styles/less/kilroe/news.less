@@ -1,0 +1,46 @@
+
+
+.news-container {
+    background: url("/images/backgrounds/news_bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 50% !important;
+
+    @media @tablet {
+        min-height: 100% !important;
+    }
+}
+
+.article-container {
+    padding: 80px 0 100px;
+    margin: 0 auto;
+    width: 70%;
+    color: @main-text-color;
+    font-size: 20px;
+}
+
+.page-title-news {
+    font-size: 30px;
+    border-bottom: 1px @main-text-color solid;
+    padding-bottom: 10px;
+}
+
+.news-article-date {
+    font-size: 30px;
+    font-style: italic;
+}
+
+.news-article-title {
+    font-size: 24px;
+    font-style: italic;
+    line-height: 30px;
+    margin-top: 0;
+}
+
+.news-article {
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+
+    &:last-child {
+        border: none;
+    }
+}

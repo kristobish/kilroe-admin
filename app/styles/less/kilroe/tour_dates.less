@@ -1,0 +1,82 @@
+.tour-date-header {
+    font-size: 16px;
+    color: #ccc;
+    padding-top: 0 !important;
+}
+
+ul.tour-date {
+    padding-top: 20px;
+    padding-bottom: 25px;
+    text-align: center;
+
+    &:first-child {
+        margin-bottom: 20px;
+    }
+
+    @media @tablet {
+        text-align: left;
+    }
+
+    li {
+        line-height: 24px;
+
+        @media @tablet {
+            width: 50%;
+            float: left;
+
+            &:first-child {
+                padding-right: 0;
+                width: 35%;
+            }
+
+            &:last-child {
+                padding-right: 0;
+                width: auto;
+            }
+        }
+    }
+}
+
+.tour-date-large {
+    font-size: 26px;
+
+}
+
+.tour-date-small {
+    font-size: 16px;
+    font-style: italic;
+
+}
+
+.tour-date-past-container {
+    margin-top: 20px;
+}
+
+.tour-date-past {
+    font-size: 16px;
+    .column-centered;
+
+    @media @tablet {
+        column-count: 2;
+    }
+
+    @media @desktop {
+        column-count: 3;
+    }
+
+    li {
+        line-height: 36px;
+    }
+}
+
+.toggle-shows {
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: @link-hover-animation;
+
+    &:hover {
+        color: @link-hover-gray;
+    }
+}

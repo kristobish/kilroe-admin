@@ -1,0 +1,47 @@
+.scroll-top-wrapper {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    z-index: 99999999;
+    background-color: #666666;
+    color: #eeeeee;
+    width: 40px;
+    height: 38px;
+    line-height: 48px;
+    right: 10px;
+    bottom: 20px;
+    padding-top: 2px;
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+
+    @media @tablet {
+        right: 30px;
+        bottom: 50px;
+        width: 50px;
+        height: 48px;
+        border-radius: 10px;
+    }
+}
+
+.scroll-top-wrapper:active,
+.scroll-top-wrapper:hover {
+    background-color: #888888;
+}
+
+.scroll-top-wrapper.show {
+    visibility: visible;
+    cursor: pointer;
+    opacity: .7;
+}
+
+
+.scroll-top-wrapper i.fa {
+    line-height: none;
+
+    @media @tablet {
+        line-height: inherit;
+    }
+
+}
