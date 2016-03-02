@@ -1,6 +1,6 @@
 <div class="admin-container">
     <div id="tour" class="content-section" data-ng-controller="TourCtrl">
-        <h2>Add Gigs</h2>
+        <h2 class="section-title-top">Add Gigs</h2>
         <form name="gigForm">
             <input type="text" placeholder="Date" datepicker-popup="EEEE M/d/yy" data-ng-model="newGig.date" is-open="opened">
             <button type="button" class="btn btn-default btn-calendar" data-ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button><br>
@@ -30,7 +30,7 @@
     </div>
 
     <div id="news" class="content-section" data-ng-controller="NewsCtrl">
-        <h2>Add News Article</h2>
+        <h2 class="section-title">Add News Article</h2>
         <form name="articleForm">
             <input type="text" placeholder="Date" datepicker-popup="M/d/yy" data-ng-model="newArticle.date" is-open="opened">
             <button type="button" class="btn btn-default btn-calendar" data-ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button><br>
@@ -56,7 +56,7 @@
     </div>
 
     <div id="songs" class="content-section" data-ng-controller="SongCatalogCtrl">
-        <h2>Add to Song Catalog</h2>
+        <h2 class="section-title">Add to Song Catalog</h2>
 
         <form name="songForm">
             <input placeholder="Song" data-ng-model="newSong.song">
@@ -78,7 +78,7 @@
     </div>
 
     <div id="video" class="content-section" data-ng-controller="VideoCatalogCtrl">
-        <h2>Add to Video Catalog</h2>
+        <h2 class="section-title">Add to Video Catalog</h2>
 
         <form name="videoForm">
             <input type="text" placeholder="Date" datepicker-popup="M-d-yyyy" data-ng-model="newVideo.date" is-open="opened">
@@ -104,7 +104,7 @@
     </div>
 
     <div id="photos" class="content-section" data-ng-controller="PhotoCatalogCtrl">
-        <h2>Add to Photo Catalog</h2>
+        <h2 class="section-title">Add to Photo Catalog</h2>
 
         <form name="photoForm">
             <input type="text" placeholder="Date" datepicker-popup="M-d-yyyy" data-ng-model="newPhoto.date" is-open="opened">
