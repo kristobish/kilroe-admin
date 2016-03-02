@@ -3,12 +3,13 @@
     background: #fff;
 }
 
-.admin-tour-list-container, {
+.admin-tour-list-container {
+    margin: 20px 0 50px;
     column-count: 3;
 }
 
 .admin-song-list-container {
-    column-count: 3;
+    column-count: 4;
 }
 
 .admin-tour-list,
@@ -17,7 +18,43 @@
     list-style-type: none;
 }
 
+.admin-tour-list {
+    margin-bottom: 10px;
+
+    li {
+        float: left;
+        padding-right: 5px;
+    }
+}
+
 .admin-delete {
-    float: left;
     margin-right: 10px;
 }
+
+.toggle-content {
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: @link-hover-animation;
+
+    &:hover {
+        color: @link-hover-gray;
+    }
+}
+
+.btn-content {
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.content-section {
+    margin-bottom: 25px;
+    padding-bottom: 50px;
+    border-bottom: 2px dashed #999;
+}
+
+.news-text-area {
+    width: 400px;
+    height: 150px;
+}
+

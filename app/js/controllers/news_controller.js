@@ -41,6 +41,15 @@
             $scope.opened = true;
         };
 
+        //Expand-Collapse - Keep closed initially
+        $scope.isCollapsed = true;
+
+        //Toggle past shows button
+        $scope.toggle = true;
+        $scope.$watch('toggle', function(){
+            $scope.toggleNews = $scope.toggle ? 'Show News' : 'Hide News';
+        });
+
     });
 
     app.controller('SocialMediaCtrl', function ($scope, Ref, $firebaseArray) {

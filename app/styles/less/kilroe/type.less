@@ -22,11 +22,19 @@ a {
     transition: @link-hover-animation;
 
     &:hover,
-    &:active,
-    &:focus {
+    &:active {
         color: @link-hover-gray;
         text-decoration: none;
     }
+
+    &:focus {
+        color: @main-text-color;
+        text-decoration: none;
+    }
+}
+
+.btn {
+    display: block;
 }
 
 .btn:active,
@@ -34,6 +42,10 @@ a {
     color: @link-hover-gray;
     text-decoration: none;
     outline: none;
+}
+
+.btn-calendar {
+    display: inline !important;
 }
 
 ul,
@@ -55,4 +67,10 @@ li {
         background: rgba(255, 255, 255, 0.5);
         color: #333;
     }
+}
+
+input,
+select,
+textarea {
+    margin-bottom: 10px;
 }

@@ -21,20 +21,29 @@ body {
   font-family: "candara";
 }
 a {
-  color: #eeeeee;
+  color: #eee;
   transition: all 0.3s linear;
 }
 a:hover,
-a:active,
-a:focus {
+a:active {
   color: #bfbfbf;
   text-decoration: none;
+}
+a:focus {
+  color: #eee;
+  text-decoration: none;
+}
+.btn {
+  display: block;
 }
 .btn:active,
 .btn:focus {
   color: #bfbfbf;
   text-decoration: none;
   outline: none;
+}
+.btn-calendar {
+  display: inline !important;
 }
 ul,
 li {
@@ -54,146 +63,10 @@ li {
   background: rgba(255, 255, 255, 0.5);
   color: #333;
 }
-.container {
-  width: 90%;
-  max-width: 768px;
-  margin: 0 auto;
-}
-@media only screen and (min-width : 992px) {
-  .container {
-    max-width: 992px;
-  }
-}
-@media only screen and (min-width : 1200px) {
-  .container {
-    max-width: 1200px;
-  }
-}
-.container::after {
-  /* clearfix */
-  content: '';
-  display: table;
-  clear: both;
-}
-.fixed-bg {
-  position: relative;
-  min-height: 60% !important;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  z-index: 1;
-}
-@media only screen and (min-width : 768px) {
-  .fixed-bg {
-    min-height: 100% !important;
-  }
-}
-@media only screen and (min-width : 1200px) {
-  .fixed-bg {
-    background-attachment: fixed;
-  }
-}
-.fixed-bg h1 {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  bottom: auto;
-  right: auto;
-  transform: translateX(-50%) translateY(-50%);
-  width: 80%;
-  max-width: 1170px;
-  text-align: center;
-  font-size: 30px;
-  text-shadow: 2px 2px 8px #000000;
-  color: #fff;
-}
-.fixed-bg h1 em {
-  font-size: 22px;
-  display: block;
-}
-@media only screen and (min-width : 768px) {
-  .fixed-bg h1 {
-    font-size: 36px;
-    width: 60%;
-  }
-  .fixed-bg h1 em {
-    font-size: 28px;
-    display: block;
-  }
-}
-@media only screen and (min-width : 1200px) {
-  .fixed-bg h1 {
-    font-size: 48px;
-    font-weight: 300;
-    line-height: 52px;
-  }
-  .fixed-bg h1 em {
-    font-size: 28px;
-    display: block;
-  }
-}
-.fixed-bg.bg-quote1 {
-  background-image: url("/images/backgrounds/home_bg1.jpg");
-}
-.fixed-bg.bg-quote2 {
-  background-image: url("/images/backgrounds/home_bg2.jpg");
-}
-.fixed-bg.bg-quote3 {
-  background-image: url("/images/backgrounds/home_bg3.jpg");
-}
-.fixed-bg.bg-quote4 {
-  background-image: url("/images/backgrounds/home_bg4.jpg");
-}
-.fixed-bg.bg-quote5 {
-  background-image: url("/images/backgrounds/home_bg5.jpg");
-}
-.scrolling-bg {
-  position: relative;
-  min-height: 50%;
-  padding: 60px 0;
-  line-height: 1.6;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-  z-index: 2;
-  font-size: 20px;
-}
-.scrolling-bg h1 {
-  border-bottom: 1px #fff solid;
-  font-size: 30px;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-@media only screen and (min-width : 768px) {
-  .scrolling-bg {
-    padding: 70px 0 60px;
-    font-size: 20px;
-    line-height: 1.6;
-    font-weight: 300;
-  }
-}
-.scrolling-bg.news-bg {
-  background-image: url("/images/backgrounds/scroll_bg1.jpg");
-  color: #eeeeee;
-}
-.scrolling-bg.tour-bg {
-  background-image: url("/images/backgrounds/scroll_bg2.jpg");
-  color: #eeeeee;
-  min-height: 0;
-}
-.scrolling-bg.band-bg {
-  background-image: url("/images/backgrounds/scroll_bg3.jpg");
-  color: #eeeeee;
-}
-.scrolling-bg.booking-bg {
-  background-image: url("/images/backgrounds/scroll_bg4.jpg");
-  color: #eeeeee;
-}
-.scrolling-bg.social-media-icons-bg {
-  width: 100%;
-  min-height: 0;
-  height: 120px;
-  background: #333;
-  line-height: 0;
-  padding-top: 30px;
+input,
+select,
+textarea {
+  margin-bottom: 10px;
 }
 .scroll-top-wrapper {
   position: fixed;
@@ -325,7 +198,7 @@ li {
   background: transparent;
   padding: .6em 3px;
   border-top: none;
-  color: #eeeeee;
+  color: #eee;
   font-size: 15px;
   text-transform: uppercase;
 }
@@ -353,661 +226,51 @@ li {
   background: #fff;
   color: #333;
 }
-.social-media-footer {
-  text-align: center;
-}
-.social-media-footer .social-media-footer-icon-container {
-  display: inline !important;
-}
-.social-media-footer .social-media-footer-icon {
-  padding: 0 14px;
-  color: #bfbfbf;
-}
-@media only screen and (min-width : 768px) {
-  .social-media-footer .social-media-footer-icon {
-    padding: 0 30px;
-  }
-}
-.social-media-footer .social-media-footer-icon:hover {
-  color: #fff;
-}
-footer {
-  width: 100%;
-  height: 30px;
-  background: #000;
-  margin: 0;
-  overflow: hidden;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-  z-index: 10;
-}
-.audio-player-controls {
-  width: 95%;
-  margin: 6px auto 0;
-  color: #bfbfbf;
-  text-align: left;
-}
-@media only screen and (min-width : 1200px) {
-  .audio-player-controls {
-    width: 75%;
-  }
-}
-.audio-player-controls .audio-player-icon {
-  cursor: pointer;
-  padding-right: 10px;
-  transition: all 0.3s linear;
-}
-.audio-player-controls .audio-player-icon:hover {
-  color: #eeeeee;
-}
-.audio-player-controls .audio-player-text {
-  padding-right: 10px;
-}
-.play,
-.pause,
-.mic-off {
-  display: none;
-}
-.seekBase {
-  height: 4px;
-  width: 75%;
-  border: 1px solid #bfbfbf;
-  margin-top: 9px;
-}
-@media only screen and (min-width : 768px) {
-  .seekBase {
-    width: 100%;
-  }
-}
-.seekLoad {
-  height: 2px;
-  width: 0;
-  background-color: #eeeeee;
-}
-.news-container {
-  background: url("/images/backgrounds/news_bg.jpg") no-repeat center center fixed;
-  background-size: cover;
-  min-height: 50% !important;
-}
-@media only screen and (min-width : 768px) {
-  .news-container {
-    min-height: 100% !important;
-  }
-}
-.article-container {
-  padding: 80px 0 100px;
-  margin: 0 auto;
-  width: 70%;
-  color: #eeeeee;
-  font-size: 20px;
-}
-.page-title-news {
-  font-size: 30px;
-  border-bottom: 1px #eeeeee solid;
-  padding-bottom: 10px;
-}
-.news-article-date {
-  font-size: 30px;
-  font-style: italic;
-}
-.news-article-title {
-  font-size: 24px;
-  font-style: italic;
-  line-height: 30px;
-  margin-top: 0;
-}
-.news-article {
-  border-bottom: 1px solid #fff;
-  padding-bottom: 10px;
-}
-.news-article:last-child {
-  border: none;
-}
-.social-media-feeds {
-  margin-top: 10px;
-}
-.social-media-no-feeds {
-  margin-top: 30px;
-  text-align: center;
-}
-@media only screen and (min-width : 768px) {
-  .social-media-no-feeds {
-    margin-top: 50px;
-    text-align: center;
-  }
-}
-@media only screen and (min-width : 992px) {
-  .social-media-no-feeds {
-    margin-left: 3%;
-  }
-}
-@media only screen and (min-width : 1200px) {
-  .social-media-no-feeds {
-    margin-left: 0;
-  }
-}
-.social-media-no-feeds i {
-  text-shadow: 2px 2px 8px #000000;
-}
-.social-media-no-feeds h2 {
-  display: inline;
-  padding: 20px 10px 0;
-}
-@media only screen and (min-width : 992px) {
-  .social-media-no-feeds h2 {
-    display: block;
-    padding: 0;
-  }
-}
-.social-media-feed-title {
-  font-size: 20px;
-  text-align: center;
-  line-height: 30px;
-}
-@media only screen and (min-width : 768px) {
-  .social-media-feed-title {
-    font-size: 24px;
-    padding-bottom: 10px;
-  }
-}
-.twitter-feed-container {
-  max-width: 320px;
-  margin-bottom: 10px;
-}
-@media only screen and (min-width : 768px) {
-  .twitter-feed-container {
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-}
-@media only screen and (min-width : 992px) {
-  .twitter-feed-container {
-    margin-right: 3%;
-  }
-}
-.twitter-timeline {
-  max-width: 320px !important;
-  max-height: 330px;
-}
-.instagram-feed-container {
-  width: 270px;
-  height: 100%;
-  margin-bottom: 20px;
-}
-@media only screen and (min-width : 768px) {
-  .instagram-feed-container {
-    width: 330px;
-  }
-}
-.instagram-feed {
-  position: relative;
-  width: 270px;
-}
-.instagram-iframe {
-  width: 220px;
-  height: 435px;
-  border: none;
-  overflow: hidden;
-}
-@media only screen and (min-width : 768px) {
-  .instagram-iframe {
-    display: none;
-  }
-}
-.instagram-iframe-tablet {
-  width: 330px;
-  height: 330px;
-  border: none;
-  overflow: hidden;
-}
-@media only screen and (min-width : 320px) {
-  .instagram-iframe-tablet {
-    display: none;
-  }
-}
-@media only screen and (min-width : 768px) {
-  .instagram-iframe-tablet {
-    display: block;
-  }
-}
-.instagram-link {
-  position: absolute;
-  width: 220px;
-  height: 435px;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  z-index: 8;
-}
-@media only screen and (min-width : 768px) {
-  .instagram-link {
-    width: 330px;
-    height: 330px;
-  }
-}
-.tour-date-header {
-  font-size: 16px;
-  color: #ccc;
-  padding-top: 0 !important;
-}
-ul.tour-date {
-  padding-top: 20px;
-  padding-bottom: 25px;
-  text-align: center;
-}
-ul.tour-date:first-child {
-  margin-bottom: 20px;
-}
-@media only screen and (min-width : 768px) {
-  ul.tour-date {
-    text-align: left;
-  }
-}
-ul.tour-date li {
-  line-height: 24px;
-}
-@media only screen and (min-width : 768px) {
-  ul.tour-date li {
-    width: 50%;
-    float: left;
-  }
-  ul.tour-date li:first-child {
-    padding-right: 0;
-    width: 35%;
-  }
-  ul.tour-date li:last-child {
-    padding-right: 0;
-    width: auto;
-  }
-}
-.tour-date-large {
-  font-size: 26px;
-}
-.tour-date-small {
-  font-size: 16px;
-  font-style: italic;
-}
-.tour-date-past-container {
-  margin-top: 20px;
-}
-.tour-date-past {
-  font-size: 16px;
-  column-count: 1;
-  column-break-inside: avoid;
-  text-align: center;
-}
-@media only screen and (min-width : 768px) {
-  .tour-date-past {
-    column-count: 2;
-  }
-}
-@media only screen and (min-width : 992px) {
-  .tour-date-past {
-    column-count: 3;
-  }
-}
-.tour-date-past li {
-  line-height: 36px;
-}
-.toggle-shows {
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
-  text-align: center;
-  transition: all 0.3s linear;
-}
-.toggle-shows:hover {
-  color: #bfbfbf;
-}
-.band-container {
-  text-align: center;
-}
-.band-member-container {
-  margin-top: 25px;
-}
-@media only screen and (min-width : 1200px) {
-  .band-member-container {
-    margin-right: 40px;
-  }
-  .band-member-container:last-child {
-    margin-right: 0;
-  }
-}
-.band-member-image {
-  border-radius: 8px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-.band-member-name {
-  margin: 10px 0 0 5px;
-  padding-bottom: 0;
-  line-height: 22px;
-}
-.band-member-title {
-  font-size: 16px;
-  font-style: italic;
-  margin-top: 5px;
-  padding-top: 0;
-  display: block;
-  line-height: 20px;
-}
-.booking-info {
-  font-size: 22px;
-  padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  background: rgba(153, 153, 153, 0.3);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-@media only screen and (min-width : 768px) {
-  .booking-info a {
-    padding-right: 50px;
-  }
-}
-@media only screen and (min-width : 768px) {
-  .booking-info {
-    font-size: 24px;
-  }
-}
-.song-list {
-  column-count: 1;
-  column-break-inside: avoid;
-  text-align: center;
-}
-@media only screen and (min-width : 768px) {
-  .song-list {
-    column-count: 2;
-  }
-}
-@media only screen and (min-width : 992px) {
-  .song-list {
-    column-count: 3;
-  }
-}
-.song-list li {
-  line-height: 36px;
-}
-.photos-container {
-  background: url("/images/backgrounds/photos_bg.jpg") no-repeat center center fixed;
-  background-size: cover;
-  min-height: 50% !important;
-}
-@media only screen and (min-width : 768px) {
-  .photos-container {
-    min-height: 100% !important;
-  }
-}
-.grid {
-  max-width: 70%;
-  list-style: none;
-  margin: 30px auto 0;
-  padding: 0 0 50px 0;
-}
-.grid li {
-  display: block;
-  float: left;
-  padding: 7px;
-  width: 100%;
-  opacity: 0;
-}
-@media only screen and (min-width : 768px) {
-  .grid li {
-    width: 50%;
-  }
-}
-@media only screen and (min-width : 992px) {
-  .grid li {
-    width: 33%;
-  }
-}
-.grid li.shown,
-.no-js .grid li,
-.no-cssanimations .grid li {
-  opacity: 1;
-}
-.grid li a,
-.grid li img {
-  outline: none;
-  border: none;
-  display: block;
-  max-width: 100%;
-}
-.mouseover-darken-photo {
-  cursor: pointer;
-}
-.mouseover-darken-photo img {
-  transition: all 0.5s linear;
-  margin: 0 auto;
-}
-.mouseover-darken-photo:hover img {
-  opacity: 0.6;
-}
-.page-title-photos {
-  color: #eeeeee;
-  text-align: center;
-  font-size: 30px;
-  padding-top: 100px;
-  margin-top: 0;
-}
-.photo-button-group {
-  width: 100%;
-  margin: 0 auto;
-  padding-top: 10px;
-  text-align: center;
-}
-.select-photos {
-  margin: 0 10px 15px;
-}
-.select-photos .photo-button {
-  width: 100px;
-  font-size: 18px;
-  color: #fff;
-  background: #0f0f0f;
-  border-color: #000;
-  transition: all 0.3s linear;
-}
-.select-photos .photo-button:hover,
-.select-photos .photo-button:active {
-  background: #333;
-  border-color: #000;
-  color: #fff;
-}
-.select-photos .photo-button:focus {
-  background: #0f0f0f;
-  border-color: #000;
-  color: #fff;
-}
-.dropdown-menu {
-  margin-top: -1px;
-}
-.dropdown-menu li a:hover {
-  background-color: #eee;
-}
-@media only screen and (min-width : 768px) {
-  .dropdown-menu-right {
-    right: auto;
-    left: auto;
-  }
-}
-.dropdown-menu-center {
-  right: -48%;
-  left: auto;
-}
-@media only screen and (min-width : 768px) {
-  .dropdown-menu-center {
-    right: auto;
-    left: auto;
-  }
-}
-.modal-backdrop.in {
-  filter: alpha(opacity=90);
-  opacity: .9;
-}
-.modal-content {
-  background-color: transparent;
-}
-.modal-dialog {
-  width: 100% !important;
-}
-.lightbox-nav {
-  z-index: 10;
-  width: 100%;
-}
-.close-photo {
-  opacity: .9;
-  color: #fff;
-  transition: all 0.3s linear;
-}
-.close-photo:hover {
-  color: #bfbfbf;
-  opacity: 1;
-}
-.btn-group-photo-nav {
-  width: 100%;
-  margin-top: 50%;
-}
-@media only screen and (min-width : 992px) {
-  .btn-group-photo-nav {
-    margin-top: 20%;
-  }
-}
-.btn-photo-nav {
-  background: transparent;
-  border: 0;
-  color: #fff;
-  transition: all 0.3s linear;
-  opacity: .5;
-}
-.btn-photo-nav:hover {
-  background: transparent;
-  border: 0;
-  color: #bfbfbf;
-}
-.btn-photo-nav-left {
-  display: none;
-}
-@media only screen and (min-width : 768px) {
-  .btn-photo-nav-left {
-    display: block;
-    float: left;
-  }
-}
-.btn-photo-nav-right {
-  display: none;
-}
-@media only screen and (min-width : 768px) {
-  .btn-photo-nav-right {
-    display: block;
-    float: right !important;
-  }
-}
-.lightbox-image-caption {
-  color: #fff;
-  text-align: center;
-  width: 99%;
-  margin: -30px auto 0;
-  font-size: 14px;
-  font-weight: normal;
-}
-.lightbox-image-caption span {
-  padding: 0;
-  background: transparent;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-#loading-bar .bar {
-  background: #fff;
-}
-#loading-bar-spinner {
-  top: 50%;
-  left: 50%;
-  color: #fff;
-}
-#loading-bar-spinner .spinner-icon {
-  border-top-color: #fff;
-  border-left-color: #fff;
-}
-.video-container {
-  background: url("/images/backgrounds/video_bg.jpg") no-repeat center center fixed;
-  background-size: cover;
-  min-height: 50% !important;
-}
-@media only screen and (min-width : 768px) {
-  .video-container {
-    min-height: 100% !important;
-  }
-}
-.youtube-container {
-  padding-top: 20px;
-  margin: 0 auto;
-  width: 320px;
-}
-@media only screen and (min-width : 768px) {
-  .youtube-container {
-    width: 600px;
-  }
-}
-.youtube-container:first-child {
-  padding-top: 80px;
-}
-.youtube-container:last-child {
-  padding-bottom: 40px;
-}
-.page-title-video {
-  color: #eeeeee;
-  font-size: 30px;
-  text-align: center;
-}
-.youtube-video {
-  z-index: 9;
-  position: relative;
-  height: 240px !important;
-}
-@media only screen and (min-width : 768px) {
-  .youtube-video {
-    height: 400px !important;
-  }
-}
-.youtube-video iframe {
-  width: 320px !important;
-  height: 240px !important;
-}
-@media only screen and (min-width : 768px) {
-  .youtube-video iframe {
-    width: 600px !important;
-    height: 400px !important;
-  }
-}
-.video-loader {
-  color: #eeeeee;
-  z-index: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-@media only screen and (min-width : 768px) {
-  .video-loader {
-    top: 50%;
-    left: 50%;
-  }
-}
 .admin-container {
   padding: 90px 0 0 30px;
   background: #fff;
 }
 .admin-tour-list-container {
+  margin: 20px 0 50px;
   column-count: 3;
 }
 .admin-song-list-container {
-  column-count: 3;
+  column-count: 4;
 }
 .admin-tour-list,
 .admin-song-list,
 .admin-news {
   list-style-type: none;
 }
-.admin-delete {
+.admin-tour-list {
+  margin-bottom: 10px;
+}
+.admin-tour-list li {
   float: left;
+  padding-right: 5px;
+}
+.admin-delete {
   margin-right: 10px;
+}
+.toggle-content {
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s linear;
+}
+.toggle-content:hover {
+  color: #bfbfbf;
+}
+.btn-content {
+  width: 100%;
+  text-transform: uppercase;
+}
+.content-section {
+  margin-bottom: 25px;
+  padding-bottom: 50px;
+  border-bottom: 2px dashed #999;
+}
+.news-text-area {
+  width: 400px;
+  height: 150px;
 }

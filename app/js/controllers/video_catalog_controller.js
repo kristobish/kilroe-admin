@@ -42,6 +42,15 @@
             $scope.opened = true;
         };
 
+        //Expand-Collapse - Keep closed initially
+        $scope.isCollapsed = true;
+
+        //Toggle past shows button
+        $scope.toggle = true;
+        $scope.$watch('toggle', function(){
+            $scope.toggleVideo = $scope.toggle ? 'Show Video' : 'Hide Video';
+        });
+
     });
 
 })(angular.module('kilroe.admin'));

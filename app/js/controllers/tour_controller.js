@@ -47,7 +47,7 @@
         //Toggle past shows button
         $scope.toggle = true;
         $scope.$watch('toggle', function(){
-            $scope.toggleText = $scope.toggle ? 'Past Shows' : 'Hide Past Shows';
+            $scope.toggleShows = $scope.toggle ? 'Show Gigs' : 'Hide Gigs';
         });
 
     });

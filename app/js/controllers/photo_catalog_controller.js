@@ -41,6 +41,15 @@
             $scope.opened = true;
         };
 
+        //Expand-Collapse - Keep closed initially
+        $scope.isCollapsed = true;
+
+        //Toggle past shows button
+        $scope.toggle = true;
+        $scope.$watch('toggle', function(){
+            $scope.togglePhotos = $scope.toggle ? 'Show Photos' : 'Hide Video';
+        });
+
     });
 
 

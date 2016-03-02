@@ -1,9 +1,9 @@
 <div class="admin-container">
-    <div data-ng-controller="TourCtrl">
+    <div id="tour" class="content-section" data-ng-controller="TourCtrl">
         <h2>Add Gigs</h2>
         <form name="gigForm">
             <input type="text" placeholder="Date" datepicker-popup="EEEE M/d/yy" data-ng-model="newGig.date" is-open="opened">
-            <button type="button" class="btn btn-default" data-ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button><br>
+            <button type="button" class="btn btn-default btn-calendar" data-ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button><br>
             <input placeholder="Venue" data-ng-model="newGig.venue"><br>
             <input placeholder="Location" data-ng-model="newGig.location"><br>
             <input placeholder="Time" data-ng-model="newGig.time"><br>
@@ -11,39 +11,51 @@
             </button>
         </form>
 
-        <div id="gigs"  class="admin-tour-list-container">
-            <ul class="admin-tour-list"
-                ng-repeat="gig in gigs | orderBy:'-date'">
-                <button class="admin-delete btn btn-xs btn-danger" data-ng-click="removeGig(gig)">x</button>
-                <li data-ng-model="gig.date" data-ng-change="gigs.$save(gig)" contenteditable="true" strip-br="true" no-line-breaks="true">{{gig.date}}</li>
-                <li data-ng-model="gig.venue" data-ng-change="gigs.$save(gig)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
-                <li data-ng-model="gig.location" data-ng-change="gigs.$save(gig)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
-                <li data-ng-model="gig.time" data-ng-change="gigs.$save(gig)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
-            </ul>
+        <div class="toggle-content" ng-click="isCollapsed = !isCollapsed; toggle = !toggle">
+            <button class="btn btn-success btn-content"><i class="fa fa-calendar"></i> {{toggleShows}}</button>
+        </div>
+
+        <div uib-collapse="isCollapsed">
+            <div class="admin-tour-list-container">
+                <ul class="admin-tour-list"
+                    ng-repeat="gig in gigs | orderBy:'-date'">
+                    <button class="admin-delete btn btn-xs btn-danger" data-ng-click="removeGig(gig)">x</button>
+                    <li data-ng-model="gig.date" data-ng-change="gigs.$save(gig)" contenteditable="true" strip-br="true" no-line-breaks="true">{{gig.date}}</li>
+                    <li data-ng-model="gig.venue" data-ng-change="gigs.$save(gig)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
+                    <li data-ng-model="gig.location" data-ng-change="gigs.$save(gig)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
+                    <li data-ng-model="gig.time" data-ng-change="gigs.$save(gig)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <div data-ng-controller="NewsCtrl">
+    <div id="news" class="content-section" data-ng-controller="NewsCtrl">
         <h2>Add News Article</h2>
         <form name="articleForm">
             <input type="text" placeholder="Date" datepicker-popup="M/d/yy" data-ng-model="newArticle.date" is-open="opened">
-            <button type="button" class="btn btn-default" data-ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button><br>
+            <button type="button" class="btn btn-default btn-calendar" data-ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button><br>
             <input placeholder="Title" data-ng-model="newArticle.title"><br>
-            <textarea placeholder="Article" data-ng-model="newArticle.article"></textarea>
+            <textarea class="news-text-area" placeholder="Article" data-ng-model="newArticle.article"></textarea>
             <button type="submit" class="btn btn-success" data-ng-click="addArticle(newArticle)">Add Article</button>
         </form>
 
-        <div id="news" class="admin-news-container">
-            <ul class="admin-news" ng-repeat="article in news | orderBy:'-date'">
-                <button class="admin-delete btn btn-xs btn-danger" data-ng-click="removeArticle(article)">X</button>
-                <li data-ng-model="article.date" data-ng-change="news.$save(article)" contenteditable="true" strip-br="true" no-line-breaks="true">{{article.date}}</li>
-                <li data-ng-model="article.title" data-ng-change="news.$save(article)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
-                <li data-ng-model="article.article" data-ng-change="news.$save(article)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
-            </ul>
+        <div class="toggle-content" ng-click="isCollapsed = !isCollapsed; toggle = !toggle">
+            <button class="btn btn-success btn-content"><i class="fa fa-newspaper-o"></i> {{toggleNews}}</button>
+        </div>
+
+        <div uib-collapse="isCollapsed">
+            <div class="admin-news-container">
+                <ul class="admin-news" ng-repeat="article in news | orderBy:'-date'">
+                    <button class="admin-delete btn btn-xs btn-danger" data-ng-click="removeArticle(article)">X</button>
+                    <li data-ng-model="article.date" data-ng-change="news.$save(article)" contenteditable="true" strip-br="true" no-line-breaks="true">{{article.date}}</li>
+                    <li data-ng-model="article.title" data-ng-change="news.$save(article)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
+                    <li ng-bind-html="article.article" data-ng-model="article.article" data-ng-change="news.$save(article)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <div data-ng-controller="SongCatalogCtrl">
+    <div id="songs" class="content-section" data-ng-controller="SongCatalogCtrl">
         <h2>Add to Song Catalog</h2>
 
         <form name="songForm">
@@ -51,52 +63,69 @@
             <button type="submit" class="btn btn-success" data-ng-click="addSong(newSong)">Add Song</button>
         </form>
 
-        <div id="songCatalog" class="admin-song-list-container">
-            <ul class="admin-song-list" ng-repeat="song in catalog | orderBy:'song'">
-                <button class="admin-delete btn btn-xs btn-danger" data-ng-click="removeSong(song)">X</button>
-                <li data-ng-model="song.song" data-ng-change="catalog.$save(song)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
-            </ul>
+        <div class="toggle-content" ng-click="isCollapsed = !isCollapsed; toggle = !toggle">
+            <button class="btn btn-success btn-content"><i class="fa fa-music"></i> {{toggleSongs}}</button>
         </div>
-    </div>
 
-    <div data-ng-controller="PhotoCatalogCtrl">
-        <h2>Add to Photo Catalog</h2>
-
-        <form name="photoForm">
-            <input type="text" placeholder="Date" datepicker-popup="M-d-yyyy" data-ng-model="newPhoto.date" is-open="opened">
-            <button type="button" class="btn btn-default" data-ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button><br>
-            <input placeholder="venue_name" data-ng-model="newPhoto.venue"><br>
-            <input placeholder="filename" data-ng-model="newPhoto.fileName"><br>
-            <input placeholder="Alt Name" data-ng-model="newPhoto.altName"><br>
-            <button type="submit" class="btn btn-success" data-ng-click="addPhoto(newPhoto)">Add Photo</button>
-        </form>
-
-        <div id="photoCatalog">
-            <div ng-repeat="photo in photos">
-                <button class="btn btn-xs btn-danger" data-ng-click="removePhoto(photo)">x</button>
-                <img alt="/images/photos/{{photo.venue}}/{{photo.date}}/{{photo.fileName}}.jpg"/>
+        <div uib-collapse="isCollapsed">
+            <div id="songCatalog" class="admin-song-list-container">
+                <ul class="admin-song-list" ng-repeat="song in catalog | orderBy:'song'">
+                    <button class="admin-delete btn btn-xs btn-danger" data-ng-click="removeSong(song)">X</button>
+                    <li data-ng-model="song.song" data-ng-change="catalog.$save(song)" contenteditable="true" strip-br="true" no-line-breaks="true"></li>
+                </ul>
             </div>
         </div>
     </div>
 
-    <div data-ng-controller="VideoCatalogCtrl">
+    <div id="video" class="content-section" data-ng-controller="VideoCatalogCtrl">
         <h2>Add to Video Catalog</h2>
 
         <form name="videoForm">
             <input type="text" placeholder="Date" datepicker-popup="M-d-yyyy" data-ng-model="newVideo.date" is-open="opened">
-            <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button><br>
+            <button type="button" class="btn btn-default btn-calendar" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button><br>
             <input placeholder="description" data-ng-model="newVideo.description"><br>
             <input placeholder="venue" data-ng-model="newVideo.venue"><br>
             <input placeholder="Youtube ID" data-ng-model="newVideo.youtubeId"><br>
             <button type="submit" class="btn btn-success" data-ng-click="addVideo(newVideo)">Add Video</button>
         </form>
 
-        <div id="videoCatalog">
-            <div ng-repeat="video in videos">
-                <button class="btn btn-xs btn-danger" data-ng-click="removeVideo(video)">x</button>
-                <div youtube="{{video.youtubeId}}"></div>
-            </div>
+        <div class="toggle-content" ng-click="isCollapsed = !isCollapsed; toggle = !toggle">
+            <button class="btn btn-success btn-content"><i class="fa fa-video-camera"></i> {{toggleVideo}}</button>
+        </div>
 
+        <div uib-collapse="isCollapsed">
+            <div id="videoCatalog">
+                <div ng-repeat="video in videos">
+                    <button class="btn btn-xs btn-danger" data-ng-click="removeVideo(video)">x</button>
+                    <div youtube="{{video.youtubeId}}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="photos" class="content-section" data-ng-controller="PhotoCatalogCtrl">
+        <h2>Add to Photo Catalog</h2>
+
+        <form name="photoForm">
+            <input type="text" placeholder="Date" datepicker-popup="M-d-yyyy" data-ng-model="newPhoto.date" is-open="opened">
+            <button type="button" class="btn btn-default btn-calendar" data-ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button><br>
+            <input placeholder="venue_name" data-ng-model="newPhoto.venue"><br>
+            <input placeholder="filename" data-ng-model="newPhoto.fileName"><br>
+            <input placeholder="Alt Name" data-ng-model="newPhoto.altName"><br>
+            <button type="submit" class="btn btn-success" data-ng-click="addPhoto(newPhoto)">Add Photo</button>
+        </form>
+
+        <div class="toggle-content" ng-click="isCollapsed = !isCollapsed; toggle = !toggle">
+            <button class="btn btn-success btn-content"><i class="fa fa-camera-retro"></i> {{togglePhotos}}</button>
+        </div>
+
+        <div uib-collapse="isCollapsed">
+            <div id="photoCatalog">
+                <div ng-repeat="photo in photos">
+                    <button class="btn btn-xs btn-danger" data-ng-click="removePhoto(photo)">x</button>
+                    <img alt="/images/photos/{{photo.venue}}/{{photo.date}}/{{photo.fileName}}.jpg"/>
+                </div>
+            </div>
         </div>
     </div>
 </div>

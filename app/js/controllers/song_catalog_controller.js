@@ -27,5 +27,14 @@
             $scope.catalog.$remove(song);
         };
 
+        //Expand-Collapse - Keep closed initially
+        $scope.isCollapsed = true;
+
+        //Toggle past shows button
+        $scope.toggle = true;
+        $scope.$watch('toggle', function(){
+            $scope.toggleSongs = $scope.toggle ? 'Show Songs' : 'Hide Songs';
+        });
+
     });
 })(angular.module('kilroe.admin'));
