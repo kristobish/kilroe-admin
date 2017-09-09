@@ -236,21 +236,30 @@ textarea {
 }
 .admin-song-list-container {
   column-count: 4;
+  margin-top: 20px;
 }
 .admin-tour-list,
 .admin-song-list,
 .admin-news {
   list-style-type: none;
 }
-.admin-tour-list {
+.admin-news {
+  margin-top: 20px;
+}
+.admin-tour-list,
+.admin-song-list {
   margin-bottom: 10px;
 }
-.admin-tour-list li {
+.admin-tour-list li,
+.admin-song-list li {
   float: left;
   padding-right: 5px;
 }
 .admin-delete {
   margin-right: 10px;
+  margin-bottom: 10px;
+  clear: both;
+  float: left;
 }
 .toggle-content {
   font-size: 16px;
